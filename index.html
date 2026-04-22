@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JR Web Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f9fafb;
+    color:#1e293b;
+    scroll-behavior:smooth;
+}
+
+/* Progress Bar */
+#progressBar{
+    position:fixed;
+    top:0;
+    left:0;
+    height:4px;
+    background:#2563eb;
+    width:0%;
+    z-index:1000;
+}
+
+/* Navbar */
+nav{
+    position:fixed;
+    width:100%;
+    background:white;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #e2e8f0;
+    z-index:999;
+}
+
+nav h2{
+    font-weight:800;
+    font-size:18px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#334155;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#2563eb;
+}
+
+/* Sections */
+section{
+    padding:120px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero{
+    padding-top:180px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.hero p{
+    margin:20px 0 30px;
+    font-size:18px;
+    color:#64748b;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.2s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    border:1px solid #e2e8f0;
+    transition:0.2s;
+}
+
+.card:hover{
+    box-shadow:0 15px 30px rgba(0,0,0,0.05);
+    transform:translateY(-5px);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:60px;
+    font-size:32px;
+    font-weight:700;
+}
+
+/* About */
+.about-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-text h3{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.about-text p{
+    color:#64748b;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+/* Why Work With Me */
+.why-box{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.why-item{
+    background:white;
+    padding:28px;
+    border-radius:12px;
+    border:1px solid #e2e8f0;
+}
+
+.why-item h4{
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.why-item p{
+    color:#64748b;
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* FAQ */
+.faq-item{
+    background:white;
+    border:1px solid #e2e8f0;
+    border-radius:10px;
+    margin-bottom:15px;
+    overflow:hidden;
+}
+
+.faq-question{
+    padding:20px;
+    cursor:pointer;
+    font-weight:600;
+    display:flex;
+    justify-content:space-between;
+}
+
+.faq-answer{
+    padding:0 20px 20px 20px;
+    display:none;
+    color:#64748b;
+    line-height:1.6;
+}
+
+/* CTA */
+.cta{
+    text-align:center;
+    background:#2563eb;
+    color:white;
+    padding:90px 20px;
+    border-radius:16px;
+    margin-top:40px;
+}
+
+.cta .btn{
+    background:white;
+    color:#2563eb;
+}
+
+footer{
+    text-align:center;
+    padding:60px 20px;
+    margin-top:60px;
+    color:#64748b;
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width:768px){
+
+    nav{
+        padding:15px 20px;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        padding-top:140px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .why-box{
+        grid-template-columns:1fr;
+    }
+
+    h2{
+        font-size:24px;
+        margin-bottom:40px;
+    }
+
+    .cta{
+        padding:60px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="progressBar"></div>
+
+<nav>
+    <h2>JR Web Studio</h2>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>I Build High-Quality Websites That Make You Look Professional</h1>
+    <p>Helping students and small businesses create modern, clean, and responsive websites.</p>
+    <a href="#contact" class="btn">Start Your Website</a>
+</section>
+
+<section id="services">
+    <h2>Services</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Portfolio Websites</h3>
+            <p>Professional personal websites to showcase achievements.</p>
+        </div>
+        <div class="card">
+            <h3>Business Websites</h3>
+            <p>Modern websites that build trust and increase credibility.</p>
+        </div>
+        <div class="card">
+            <h3>Landing Pages</h3>
+            <p>Conversion-focused pages designed to generate leads.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About the Founder</h2>
+    <div class="about-container">
+        <div class="about-text">
+            <h3>Joseph Ronald Kavala</h3>
+            <p><strong>Founder, JR Web Studio</strong></p>
+            <p>
+                I focus on building clean, professional websites that help individuals 
+                and businesses establish a strong online presence.
+            </p>
+        </div>
+        <div class="why-box">
+            <div class="why-item">
+                <h4>Fast Communication</h4>
+                <p>Quick replies and clear updates during your project.</p>
+            </div>
+            <div class="why-item">
+                <h4>Modern Design</h4>
+                <p>Clean layouts that build trust instantly.</p>
+            </div>
+            <div class="why-item">
+                <h4>Mobile Optimized</h4>
+                <p>Works perfectly on phones and desktops.</p>
+            </div>
+            <div class="why-item">
+                <h4>Attention to Detail</h4>
+                <p>Every section structured for clarity and impact.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <div class="faq-question">How long does a website take?</div>
+        <div class="faq-answer">Most projects take 1–5 days depending on complexity.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Will my website work on mobile?</div>
+        <div class="faq-answer">Yes. Every website is fully responsive and optimized for mobile devices.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Do you offer revisions?</div>
+        <div class="faq-answer">Yes. Revision rounds are included to ensure satisfaction.</div>
+    </div>
+
+</section>
+
+<section id="contact" class="cta">
+    <h2>Let’s Build Your Website</h2>
+    <a href="https://wa.me/919652152707" target="_blank" class="btn">Text on WhatsApp</a>
+    <p style="margin-top:20px;">josephronaldk0509@gmail.com</p>
+</section>
+
+<footer>
+    © 2026 JR Web Studio • Founded by Joseph Ronald Kavala
+</footer>
+
+<script>
+window.onscroll = function(){
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById("progressBar").style.width = scrolled + "%";
+};
+
+document.querySelectorAll(".faq-question").forEach(item=>{
+    item.addEventListener("click",()=>{
+        const answer=item.nextElementSibling;
+        answer.style.display=answer.style.display==="block"?"none":"block";
+    });
+});
+</script>
+
+</body>
+</html>
