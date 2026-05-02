@@ -42,6 +42,7 @@ nav{
     justify-content:space-between;
     align-items:center;
     border-bottom:1px solid #e2e8f0;
+    box-shadow:0 2px 10px rgba(0,0,0,0.03);
     z-index:999;
 }
 
@@ -60,6 +61,7 @@ nav ul li a{
     text-decoration:none;
     color:#334155;
     font-weight:500;
+    transition:0.2s;
 }
 
 nav ul li a:hover{
@@ -71,11 +73,21 @@ section{
     padding:120px 20px;
     max-width:1100px;
     margin:auto;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.6s ease;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 .hero{
     padding-top:180px;
     text-align:center;
+    opacity:1;
+    transform:none;
 }
 
 .hero h1{
@@ -223,7 +235,7 @@ footer{
     color:#64748b;
 }
 
-/* ---------- MOBILE RESPONSIVE ---------- */
+/* Mobile */
 @media (max-width:768px){
 
     nav{
@@ -291,7 +303,7 @@ footer{
 </nav>
 
 <section class="hero">
-    <h1>I Build High-Quality Websites That Make You Look Professional</h1>
+    <h1>Professional Websites Built for Growth and Credibility</h1>
     <p>Helping students and small businesses create modern, clean, and responsive websites.</p>
     <a href="#contact" class="btn">Start Your Website</a>
 </section>
@@ -321,8 +333,8 @@ footer{
             <h3>Joseph Ronald Kavala</h3>
             <p><strong>Founder, JR Web Studio</strong></p>
             <p>
-                I focus on building clean, professional websites that help individuals 
-                and businesses establish a strong online presence.
+                I build clean, professional websites that help individuals and businesses 
+                establish a strong online presence.
             </p>
         </div>
         <div class="why-box">
@@ -373,7 +385,7 @@ footer{
 </section>
 
 <footer>
-    © 2026 JR Web Studio • Founded by Joseph Ronald Kavala
+    © <span id="year"></span> JR Web Studio • Founded by Joseph Ronald Kavala
 </footer>
 
 <script>
@@ -390,6 +402,19 @@ document.querySelectorAll(".faq-question").forEach(item=>{
         answer.style.display=answer.style.display==="block"?"none":"block";
     });
 });
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+    sections.forEach(section=>{
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < window.innerHeight - 100){
+            section.classList.add("show");
+        }
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
