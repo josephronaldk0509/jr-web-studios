@@ -24,7 +24,6 @@ body{
     color:#fff;
 }
 
-/* NAVBAR */
 nav{
     position:fixed;
     width:100%;
@@ -44,7 +43,6 @@ nav a{
     font-weight:500;
 }
 
-/* HERO */
 .hero{
     height:100vh;
     display:flex;
@@ -84,7 +82,6 @@ nav a{
     background:#ccc;
 }
 
-/* SECTIONS */
 section{
     padding:100px 10%;
 }
@@ -97,7 +94,6 @@ section{
     padding:50px;
 }
 
-/* SERVICES GRID */
 .services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -118,7 +114,6 @@ section{
     background:rgba(255,255,255,0.05);
 }
 
-/* TESTIMONIAL */
 .testimonial{
     margin-top:40px;
     padding:30px;
@@ -127,7 +122,6 @@ section{
     border:1px solid rgba(255,255,255,0.05);
 }
 
-/* FAQ */
 .faq-item{
     margin-bottom:15px;
 }
@@ -145,7 +139,15 @@ section{
     color:#aaa;
 }
 
-/* FOOTER */
+.contact-box{
+    text-align:center;
+}
+
+.contact-box p{
+    color:#aaa;
+    margin:20px 0;
+}
+
 footer{
     text-align:center;
     padding:30px;
@@ -161,49 +163,56 @@ footer{
     <div><strong>JR Web Studios</strong></div>
     <div>
         <a href="#services">Services</a>
-        <a href="#testimonial">Testimonial</a>
-        <a href="#faq">FAQ</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <div class="hero">
     <h1>Premium Digital Services for Modern Brands</h1>
-    <p>Web. Design. Optimization. Built with precision and clarity.</p>
+    <p>Web. Design. Optimization. Built with clarity and precision.</p>
     <a href="#services" class="btn">Explore Services</a>
 </div>
 
 <section id="services">
 <div class="section-box">
 <h2>My Services</h2>
-
 <div class="services">
-<div class="card">✅ Resume & LinkedIn Profile Optimization</div>
-<div class="card">✅ Canva Poster Design</div>
-<div class="card">✅ YouTube Thumbnail Design</div>
-<div class="card">✅ Instagram Reel Scripting</div>
-<div class="card">✅ AI Prompt Writing Service</div>
-<div class="card">✅ Podcast Editing Service</div>
-<div class="card">✅ Custom PowerPoint Presentation Service</div>
-<div class="card">✅ Website Maintenance Service</div>
-<div class="card">✅ Fiverr Freelancing (Design/Web)</div>
+<div class="card">Resume & LinkedIn Profile Optimization</div>
+<div class="card">Canva Poster Design</div>
+<div class="card">YouTube Thumbnail Design</div>
+<div class="card">Instagram Reel Scripting</div>
+<div class="card">AI Prompt Writing Service</div>
+<div class="card">Podcast Editing Service</div>
+<div class="card">Custom PowerPoint Presentation Service</div>
+<div class="card">Website Maintenance Service</div>
+<div class="card">Fiverr Freelancing (Design/Web)</div>
 </div>
+</div>
+</section>
+
+<section id="about">
+<div class="section-box">
+<h2>About the Founder</h2>
+<p style="margin-top:20px; color:#aaa; line-height:1.6;">
+JR Web Studios was founded by Joseph Ronald, a driven Grade 12 student focused on building premium digital experiences. 
+With a strong interest in design, optimization, and modern web development, the goal is simple — create clean, high-quality work that builds credibility and trust for clients.
+</p>
 </div>
 </section>
 
 <section id="testimonial">
 <div class="section-box">
 <h2>Client Testimonial</h2>
-
 <div class="testimonial">
 <p>
-"JR Web Studios delivered a clean, modern website that truly elevated our brand presence.
-The attention to detail and premium feel exceeded expectations."
+"JR Web Studios delivered a clean, modern website that elevated our brand. 
+The attention to detail and premium design feel exceeded expectations."
 </p>
 <br>
 <strong>Daniel – Owner of ArtGPT</strong><br>
 ⭐ 4.7 / 5 Rating
 </div>
-
 </div>
 </section>
 
@@ -213,19 +222,22 @@ The attention to detail and premium feel exceeded expectations."
 
 <div class="faq-item">
 <div class="faq-question">How long does a project take?</div>
-<div class="faq-answer">Most projects are completed within 3–7 days depending on complexity.</div>
+<div class="faq-answer">Most projects are completed within 3–7 days depending on scope.</div>
 </div>
 
 <div class="faq-item">
 <div class="faq-question">Do you offer revisions?</div>
-<div class="faq-answer">Yes, revisions are included to ensure quality and satisfaction.</div>
+<div class="faq-answer">Yes, revisions are included to ensure satisfaction.</div>
 </div>
 
-<div class="faq-item">
-<div class="faq-question">How can I contact you?</div>
-<div class="faq-answer">You can contact me directly through WhatsApp or email.</div>
 </div>
+</section>
 
+<section id="contact">
+<div class="section-box contact-box">
+<h2>Contact</h2>
+<p>Interested in working together? Let’s build something professional.</p>
+<a href="mailto:your@email.com" class="btn">Send Email</a>
 </div>
 </section>
 
@@ -236,7 +248,6 @@ The attention to detail and premium feel exceeded expectations."
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* FAQ toggle */
 document.querySelectorAll(".faq-question").forEach(q=>{
     q.addEventListener("click",()=>{
         const answer = q.nextElementSibling;
