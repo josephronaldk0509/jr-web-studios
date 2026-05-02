@@ -24,7 +24,6 @@ body{
     color:#fff;
 }
 
-/* ---------- NAVBAR ---------- */
 nav{
     position:fixed;
     width:100%;
@@ -62,7 +61,6 @@ nav ul li a:hover{
     color:#fff;
 }
 
-/* ---------- SECTIONS ---------- */
 section{
     padding:140px 10%;
 }
@@ -81,7 +79,6 @@ h2{
     margin-bottom:40px;
 }
 
-/* ---------- HERO ---------- */
 .hero{
     height:100vh;
     display:flex;
@@ -117,6 +114,7 @@ h2{
     text-decoration:none;
     font-weight:600;
     transition:0.3s;
+    display:inline-block;
 }
 
 .btn:hover{
@@ -124,7 +122,17 @@ h2{
     transform:translateY(-3px);
 }
 
-/* ---------- SERVICES ---------- */
+.btn-secondary{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.4);
+    margin-left:15px;
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,0.1);
+}
+
 .services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -144,7 +152,6 @@ h2{
     background:rgba(255,255,255,0.05);
 }
 
-/* ---------- TESTIMONIAL ---------- */
 .testimonial{
     padding:40px;
     border-radius:22px;
@@ -152,7 +159,6 @@ h2{
     border:1px solid rgba(255,255,255,0.05);
 }
 
-/* ---------- FAQ ---------- */
 .faq-item{
     margin-bottom:20px;
 }
@@ -172,7 +178,6 @@ h2{
     line-height:1.6;
 }
 
-/* ---------- CONTACT ---------- */
 .contact-box{
     text-align:center;
 }
@@ -182,7 +187,6 @@ h2{
     margin-bottom:25px;
 }
 
-/* ---------- FOOTER ---------- */
 footer{
     text-align:center;
     padding:50px;
@@ -273,7 +277,13 @@ JR Web Studios was founded by Joseph Ronald, a focused Grade 12 student passiona
 <div class="section-box contact-box">
 <h2>Contact</h2>
 <p>Interested in working together? Let’s build something professional.</p>
+
 <a href="mailto:josephronaldk0509@gmail.com" class="btn">Send Email</a>
+
+<a href="https://wa.me/919652152707" target="_blank" class="btn btn-secondary">
+Chat on WhatsApp
+</a>
+
 </div>
 </section>
 
