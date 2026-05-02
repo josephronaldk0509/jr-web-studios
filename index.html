@@ -18,31 +18,70 @@
 body{
     font-family:'Inter',sans-serif;
     background:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 40%),
-        linear-gradient(to bottom, #0a0a0a, #000000);
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.03), transparent 40%),
+        linear-gradient(to bottom, #0d0d0d, #000000);
     color:#fff;
 }
 
+/* ---------- NAVBAR ---------- */
 nav{
     position:fixed;
     width:100%;
-    padding:20px 8%;
+    padding:22px 8%;
     display:flex;
     justify-content:space-between;
+    align-items:center;
     backdrop-filter:blur(20px);
     background:rgba(0,0,0,0.6);
-    border-bottom:1px solid rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.06);
     z-index:1000;
 }
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:500;
+nav .logo{
+    font-weight:800;
+    font-size:18px;
+    letter-spacing:0.5px;
 }
 
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#bbb;
+    font-weight:500;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#fff;
+}
+
+/* ---------- SECTIONS ---------- */
+section{
+    padding:140px 10%;
+}
+
+.section-box{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    backdrop-filter:blur(20px);
+    border-radius:28px;
+    padding:70px;
+}
+
+h2{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+/* ---------- HERO ---------- */
 .hero{
     height:100vh;
     display:flex;
@@ -54,22 +93,24 @@ nav a{
 }
 
 .hero h1{
-    font-size:3rem;
+    font-size:52px;
     font-weight:800;
-    background:linear-gradient(to right,#fff,#bbb);
+    line-height:1.2;
+    background:linear-gradient(to right,#ffffff,#bfbfbf);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-    margin-top:20px;
-    font-size:1.2rem;
+    margin-top:25px;
+    font-size:18px;
     color:#aaa;
+    max-width:650px;
 }
 
 .btn{
-    margin-top:30px;
-    padding:14px 30px;
+    margin-top:35px;
+    padding:15px 36px;
     background:#fff;
     color:#000;
     border-radius:40px;
@@ -79,31 +120,20 @@ nav a{
 }
 
 .btn:hover{
-    background:#ccc;
+    background:#dcdcdc;
+    transform:translateY(-3px);
 }
 
-section{
-    padding:100px 10%;
-}
-
-.section-box{
-    background:rgba(255,255,255,0.03);
-    border:1px solid rgba(255,255,255,0.06);
-    backdrop-filter:blur(20px);
-    border-radius:25px;
-    padding:50px;
-}
-
+/* ---------- SERVICES ---------- */
 .services{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    margin-top:40px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
 }
 
 .card{
-    padding:25px;
-    border-radius:20px;
+    padding:30px;
+    border-radius:22px;
     background:rgba(255,255,255,0.02);
     border:1px solid rgba(255,255,255,0.05);
     transition:0.3s;
@@ -114,45 +144,50 @@ section{
     background:rgba(255,255,255,0.05);
 }
 
+/* ---------- TESTIMONIAL ---------- */
 .testimonial{
-    margin-top:40px;
-    padding:30px;
-    border-radius:20px;
+    padding:40px;
+    border-radius:22px;
     background:rgba(255,255,255,0.02);
     border:1px solid rgba(255,255,255,0.05);
 }
 
+/* ---------- FAQ ---------- */
 .faq-item{
-    margin-bottom:15px;
+    margin-bottom:20px;
 }
 
 .faq-question{
     cursor:pointer;
-    padding:15px;
+    padding:18px 22px;
+    border-radius:16px;
     background:rgba(255,255,255,0.03);
-    border-radius:12px;
+    font-weight:600;
 }
 
 .faq-answer{
     display:none;
-    padding:10px 15px;
+    padding:12px 22px;
     color:#aaa;
+    line-height:1.6;
 }
 
+/* ---------- CONTACT ---------- */
 .contact-box{
     text-align:center;
 }
 
 .contact-box p{
     color:#aaa;
-    margin:20px 0;
+    margin-bottom:25px;
 }
 
+/* ---------- FOOTER ---------- */
 footer{
     text-align:center;
-    padding:30px;
+    padding:50px;
     color:#777;
-    font-size:0.9rem;
+    font-size:14px;
 }
 </style>
 </head>
@@ -160,15 +195,18 @@ footer{
 <body>
 
 <nav>
-    <div><strong>JR Web Studios</strong></div>
-    <div>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <div class="logo">JR Web Studios</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonial">Testimonial</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
-<div class="hero">
+<div class="hero" id="home">
     <h1>Premium Digital Services for Modern Brands</h1>
     <p>Web. Design. Optimization. Built with clarity and precision.</p>
     <a href="#services" class="btn">Explore Services</a>
@@ -176,7 +214,7 @@ footer{
 
 <section id="services">
 <div class="section-box">
-<h2>My Services</h2>
+<h2>Services</h2>
 <div class="services">
 <div class="card">Resume & LinkedIn Profile Optimization</div>
 <div class="card">Canva Poster Design</div>
@@ -194,9 +232,8 @@ footer{
 <section id="about">
 <div class="section-box">
 <h2>About the Founder</h2>
-<p style="margin-top:20px; color:#aaa; line-height:1.6;">
-JR Web Studios was founded by Joseph Ronald, a driven Grade 12 student focused on building premium digital experiences. 
-With a strong interest in design, optimization, and modern web development, the goal is simple — create clean, high-quality work that builds credibility and trust for clients.
+<p style="color:#aaa; line-height:1.8; max-width:800px;">
+JR Web Studios was founded by Joseph Ronald, a focused Grade 12 student passionate about building clean and professional digital experiences. The goal is to create high-quality, premium designs that help individuals and businesses establish credibility online.
 </p>
 </div>
 </section>
@@ -206,8 +243,7 @@ With a strong interest in design, optimization, and modern web development, the 
 <h2>Client Testimonial</h2>
 <div class="testimonial">
 <p>
-"JR Web Studios delivered a clean, modern website that elevated our brand. 
-The attention to detail and premium design feel exceeded expectations."
+"JR Web Studios delivered a clean and modern website that elevated our brand presence. The design quality and clarity exceeded expectations."
 </p>
 <br>
 <strong>Daniel – Owner of ArtGPT</strong><br>
@@ -237,7 +273,7 @@ The attention to detail and premium design feel exceeded expectations."
 <div class="section-box contact-box">
 <h2>Contact</h2>
 <p>Interested in working together? Let’s build something professional.</p>
-<a href="mailto:your@email.com" class="btn">Send Email</a>
+<a href="mailto:josephronaldk0509@gmail.com" class="btn">Send Email</a>
 </div>
 </section>
 
