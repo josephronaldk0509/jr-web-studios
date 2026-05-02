@@ -3,329 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JR Web Studio</title>
+<title>JR Web Studios</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
     font-family:'Inter',sans-serif;
-    background:#000;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 40%),
+        linear-gradient(to bottom, #0a0a0a, #000000);
     color:#fff;
-    scroll-behavior:smooth;
 }
 
-/* Progress Bar */
-#progressBar{
-    position:fixed;
-    top:0;
-    left:0;
-    height:3px;
-    background:#fff;
-    width:0%;
-    z-index:1000;
-}
-
-/* Navbar */
+/* NAVBAR */
 nav{
     position:fixed;
     width:100%;
-    background:rgba(0,0,0,0.85);
-    backdrop-filter:blur(10px);
-    padding:18px 60px;
+    padding:20px 8%;
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #222;
-    z-index:999;
+    backdrop-filter:blur(20px);
+    background:rgba(0,0,0,0.6);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:1000;
 }
 
-nav h2{
-    font-weight:800;
-    font-size:18px;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:#aaa;
-    font-weight:500;
-    transition:0.3s;
-}
-
-nav ul li a:hover{
+nav a{
     color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:500;
 }
 
-/* Sections */
-section{
-    padding:140px 20px;
-    max-width:1100px;
-    margin:auto;
-    opacity:0;
-    transform:translateY(60px);
-    transition:all 0.8s ease;
-}
-
-section.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
+/* HERO */
 .hero{
-    padding-top:200px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    opacity:1;
-    transform:none;
+    padding:0 10%;
 }
 
 .hero h1{
-    font-size:52px;
+    font-size:3rem;
     font-weight:800;
-    letter-spacing:-1px;
+    background:linear-gradient(to right,#fff,#bbb);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-    margin:25px 0 35px;
-    font-size:18px;
-    color:#bbb;
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#aaa;
 }
 
 .btn{
-    display:inline-block;
-    padding:14px 32px;
+    margin-top:30px;
+    padding:14px 30px;
     background:#fff;
     color:#000;
-    border-radius:50px;
+    border-radius:40px;
     text-decoration:none;
     font-weight:600;
     transition:0.3s;
 }
 
 .btn:hover{
-    background:#ddd;
-    transform:translateY(-3px);
+    background:#ccc;
 }
 
-/* Cards */
-.cards{
+/* SECTIONS */
+section{
+    padding:100px 10%;
+}
+
+.section-box{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    padding:50px;
+}
+
+/* SERVICES GRID */
+.services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
+    margin-top:40px;
 }
 
 .card{
-    background:#111;
-    padding:28px;
-    border-radius:16px;
-    border:1px solid #222;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.05);
     transition:0.3s;
 }
 
 .card:hover{
-    border:1px solid #fff;
     transform:translateY(-8px);
+    background:rgba(255,255,255,0.05);
+}
+
+/* TESTIMONIAL */
+.testimonial{
+    margin-top:40px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.05);
 }
 
 /* FAQ */
 .faq-item{
-    border-bottom:1px solid #222;
-    padding:20px 0;
+    margin-bottom:15px;
 }
 
 .faq-question{
-    font-weight:600;
     cursor:pointer;
-    display:flex;
-    justify-content:space-between;
+    padding:15px;
+    background:rgba(255,255,255,0.03);
+    border-radius:12px;
 }
 
 .faq-answer{
     display:none;
-    color:#bbb;
-    margin-top:10px;
-    line-height:1.6;
+    padding:10px 15px;
+    color:#aaa;
 }
 
-/* Testimonial */
-.testimonial{
-    background:#111;
-    padding:40px;
-    border-radius:16px;
-    border:1px solid #222;
-    text-align:center;
-}
-
-.testimonial p{
-    font-size:18px;
-    color:#ccc;
-    line-height:1.7;
-}
-
-.testimonial h4{
-    margin-top:20px;
-    font-weight:600;
-}
-
-.rating{
-    margin-top:10px;
-    font-size:18px;
-    letter-spacing:3px;
-}
-
-/* CTA */
-.cta{
-    text-align:center;
-    background:#111;
-    padding:100px 20px;
-    border-radius:20px;
-}
-
-/* Footer */
+/* FOOTER */
 footer{
     text-align:center;
-    padding:60px 20px;
-    color:#666;
-}
-
-/* Mobile */
-@media (max-width:768px){
-    nav{
-        padding:15px 20px;
-        flex-direction:column;
-        gap:10px;
-    }
-    nav ul{
-        flex-wrap:wrap;
-        gap:15px;
-        justify-content:center;
-    }
-    .hero h1{
-        font-size:32px;
-    }
+    padding:30px;
+    color:#777;
+    font-size:0.9rem;
 }
 </style>
 </head>
 
 <body>
 
-<div id="progressBar"></div>
-
 <nav>
-    <h2>JR Web Studio</h2>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div><strong>JR Web Studios</strong></div>
+    <div>
+        <a href="#services">Services</a>
+        <a href="#testimonial">Testimonial</a>
+        <a href="#faq">FAQ</a>
+    </div>
 </nav>
 
-<section class="hero">
-    <h1>Professional Digital Services for Modern Brands</h1>
-    <p>Helping creators and businesses build strong online authority.</p>
-    <a href="#contact" class="btn">Start Your Project</a>
-</section>
+<div class="hero">
+    <h1>Premium Digital Services for Modern Brands</h1>
+    <p>Web. Design. Optimization. Built with precision and clarity.</p>
+    <a href="#services" class="btn">Explore Services</a>
+</div>
 
 <section id="services">
-    <h2 style="text-align:center;margin-bottom:60px;">Services</h2>
-    <div class="cards">
-        <div class="card"><h3>Websites</h3><p>Modern portfolio & business websites.</p></div>
-        <div class="card"><h3>Resume & LinkedIn Optimization</h3><p>Professional profile upgrades.</p></div>
-        <div class="card"><h3>Canva Poster Design</h3><p>Clean marketing creatives.</p></div>
-        <div class="card"><h3>YouTube Thumbnail Design</h3><p>High-converting thumbnails.</p></div>
-        <div class="card"><h3>Instagram Reel Scripting</h3><p>Engaging content scripts.</p></div>
-        <div class="card"><h3>AI Prompt Writing</h3><p>Optimized AI workflows.</p></div>
-        <div class="card"><h3>Podcast Editing</h3><p>Professional audio polish.</p></div>
-        <div class="card"><h3>Custom PowerPoint</h3><p>Premium presentations.</p></div>
-        <div class="card"><h3>Website Maintenance</h3><p>Ongoing support & updates.</p></div>
-        <div class="card"><h3>Design Freelancing</h3><p>Web & digital services.</p></div>
-    </div>
+<div class="section-box">
+<h2>My Services</h2>
+
+<div class="services">
+<div class="card">✅ Resume & LinkedIn Profile Optimization</div>
+<div class="card">✅ Canva Poster Design</div>
+<div class="card">✅ YouTube Thumbnail Design</div>
+<div class="card">✅ Instagram Reel Scripting</div>
+<div class="card">✅ AI Prompt Writing Service</div>
+<div class="card">✅ Podcast Editing Service</div>
+<div class="card">✅ Custom PowerPoint Presentation Service</div>
+<div class="card">✅ Website Maintenance Service</div>
+<div class="card">✅ Fiverr Freelancing (Design/Web)</div>
+</div>
+</div>
 </section>
 
-<section id="testimonials">
-    <h2 style="text-align:center;margin-bottom:60px;">Client Feedback</h2>
-    <div class="testimonial">
-        <p>
-            "JR Web Studio built a clean and professional website for ArtGPT. 
-            The design quality and responsiveness were impressive. Highly reliable and easy to work with."
-        </p>
-        <h4>Daniel — Owner, ArtGPT</h4>
-        <div class="rating">★★★★☆ 4.7/5</div>
-    </div>
+<section id="testimonial">
+<div class="section-box">
+<h2>Client Testimonial</h2>
+
+<div class="testimonial">
+<p>
+"JR Web Studios delivered a clean, modern website that truly elevated our brand presence.
+The attention to detail and premium feel exceeded expectations."
+</p>
+<br>
+<strong>Daniel – Owner of ArtGPT</strong><br>
+⭐ 4.7 / 5 Rating
+</div>
+
+</div>
 </section>
 
 <section id="faq">
-    <h2 style="text-align:center;margin-bottom:40px;">Frequently Asked Questions</h2>
+<div class="section-box">
+<h2>Frequently Asked Questions</h2>
 
-    <div class="faq-item">
-        <div class="faq-question">How long does a project take?</div>
-        <div class="faq-answer">Most websites are delivered within 1–5 days depending on complexity.</div>
-    </div>
+<div class="faq-item">
+<div class="faq-question">How long does a project take?</div>
+<div class="faq-answer">Most projects are completed within 3–7 days depending on complexity.</div>
+</div>
 
-    <div class="faq-item">
-        <div class="faq-question">Will my website be mobile friendly?</div>
-        <div class="faq-answer">Yes. Every project is fully responsive and optimized for all devices.</div>
-    </div>
+<div class="faq-item">
+<div class="faq-question">Do you offer revisions?</div>
+<div class="faq-answer">Yes, revisions are included to ensure quality and satisfaction.</div>
+</div>
 
-    <div class="faq-item">
-        <div class="faq-question">Do you provide revisions?</div>
-        <div class="faq-answer">Yes. Revisions are included to ensure complete satisfaction.</div>
-    </div>
+<div class="faq-item">
+<div class="faq-question">How can I contact you?</div>
+<div class="faq-answer">You can contact me directly through WhatsApp or email.</div>
+</div>
 
-</section>
-
-<section id="contact" class="cta">
-    <h2>Let’s Work Together</h2>
-    <a href="https://wa.me/919652152707" target="_blank" class="btn">Text on WhatsApp</a>
-    <p style="margin-top:20px;">josephronaldk0509@gmail.com</p>
+</div>
 </section>
 
 <footer>
-    © <span id="year"></span> JR Web Studio
+© <span id="year"></span> JR Web Studios • Founded by Joseph Ronald
 </footer>
 
 <script>
-/* Scroll Progress */
-window.onscroll = function(){
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    document.getElementById("progressBar").style.width = scrolled + "%";
-};
-
-/* Apple-style smooth reveal */
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll",()=>{
-    sections.forEach(section=>{
-        const top = section.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            section.classList.add("show");
-        }
-    });
-});
+document.getElementById("year").textContent = new Date().getFullYear();
 
 /* FAQ toggle */
-document.querySelectorAll(".faq-question").forEach(item=>{
-    item.addEventListener("click",()=>{
-        const answer=item.nextElementSibling;
-        answer.style.display=answer.style.display==="block"?"none":"block";
+document.querySelectorAll(".faq-question").forEach(q=>{
+    q.addEventListener("click",()=>{
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
     });
 });
-
-document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 
 </body>
