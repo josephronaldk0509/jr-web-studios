@@ -16,8 +16,8 @@
 
 body{
     font-family:'Inter',sans-serif;
-    background:#f9fafb;
-    color:#1e293b;
+    background:#000;
+    color:#fff;
     scroll-behavior:smooth;
 }
 
@@ -27,7 +27,7 @@ body{
     top:0;
     left:0;
     height:4px;
-    background:#2563eb;
+    background:#fff;
     width:0%;
     z-index:1000;
 }
@@ -36,13 +36,12 @@ body{
 nav{
     position:fixed;
     width:100%;
-    background:white;
+    background:#000;
     padding:18px 60px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid #e2e8f0;
-    box-shadow:0 2px 10px rgba(0,0,0,0.03);
+    border-bottom:1px solid #222;
     z-index:999;
 }
 
@@ -59,13 +58,13 @@ nav ul{
 
 nav ul li a{
     text-decoration:none;
-    color:#334155;
+    color:#aaa;
     font-weight:500;
     transition:0.2s;
 }
 
 nav ul li a:hover{
-    color:#2563eb;
+    color:#fff;
 }
 
 /* Sections */
@@ -73,40 +72,29 @@ section{
     padding:120px 20px;
     max-width:1100px;
     margin:auto;
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.6s ease;
-}
-
-section.show{
-    opacity:1;
-    transform:translateY(0);
 }
 
 .hero{
     padding-top:180px;
     text-align:center;
-    opacity:1;
-    transform:none;
 }
 
 .hero h1{
     font-size:48px;
     font-weight:800;
-    line-height:1.2;
 }
 
 .hero p{
     margin:20px 0 30px;
     font-size:18px;
-    color:#64748b;
+    color:#bbb;
 }
 
 .btn{
     display:inline-block;
     padding:14px 30px;
-    background:#2563eb;
-    color:white;
+    background:#fff;
+    color:#000;
     border-radius:8px;
     text-decoration:none;
     font-weight:600;
@@ -114,27 +102,26 @@ section.show{
 }
 
 .btn:hover{
-    background:#1d4ed8;
-    transform:translateY(-2px);
+    background:#ddd;
 }
 
 /* Cards */
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+    gap:25px;
 }
 
 .card{
-    background:white;
-    padding:30px;
+    background:#111;
+    padding:28px;
     border-radius:12px;
-    border:1px solid #e2e8f0;
+    border:1px solid #222;
     transition:0.2s;
 }
 
 .card:hover{
-    box-shadow:0 15px 30px rgba(0,0,0,0.05);
+    border:1px solid #fff;
     transform:translateY(-5px);
 }
 
@@ -142,102 +129,37 @@ h2{
     text-align:center;
     margin-bottom:60px;
     font-size:32px;
-    font-weight:700;
 }
 
 /* About */
 .about-container{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-}
-
-.about-text h3{
-    font-size:24px;
-    margin-bottom:8px;
+    gap:60px;
 }
 
 .about-text p{
-    color:#64748b;
+    color:#bbb;
     line-height:1.8;
-    margin-top:15px;
-}
-
-/* Why Work With Me */
-.why-box{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
-}
-
-.why-item{
-    background:white;
-    padding:28px;
-    border-radius:12px;
-    border:1px solid #e2e8f0;
-}
-
-.why-item h4{
-    margin-bottom:10px;
-    font-size:18px;
-}
-
-.why-item p{
-    color:#64748b;
-    font-size:15px;
-    line-height:1.6;
-}
-
-/* FAQ */
-.faq-item{
-    background:white;
-    border:1px solid #e2e8f0;
-    border-radius:10px;
-    margin-bottom:15px;
-    overflow:hidden;
-}
-
-.faq-question{
-    padding:20px;
-    cursor:pointer;
-    font-weight:600;
-    display:flex;
-    justify-content:space-between;
-}
-
-.faq-answer{
-    padding:0 20px 20px 20px;
-    display:none;
-    color:#64748b;
-    line-height:1.6;
 }
 
 /* CTA */
 .cta{
     text-align:center;
-    background:#2563eb;
-    color:white;
-    padding:90px 20px;
+    background:#111;
+    padding:80px 20px;
     border-radius:16px;
-    margin-top:40px;
-}
-
-.cta .btn{
-    background:white;
-    color:#2563eb;
 }
 
 footer{
     text-align:center;
     padding:60px 20px;
     margin-top:60px;
-    color:#64748b;
+    color:#777;
 }
 
 /* Mobile */
 @media (max-width:768px){
-
     nav{
         padding:15px 20px;
         flex-direction:column;
@@ -245,43 +167,21 @@ footer{
     }
 
     nav ul{
-        gap:15px;
         flex-wrap:wrap;
         justify-content:center;
-    }
-
-    .hero{
-        padding-top:140px;
+        gap:15px;
     }
 
     .hero h1{
         font-size:28px;
     }
 
-    .hero p{
-        font-size:15px;
-    }
-
-    section{
-        padding:80px 20px;
-    }
-
     .about-container{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .why-box{
         grid-template-columns:1fr;
     }
 
     h2{
         font-size:24px;
-        margin-bottom:40px;
-    }
-
-    .cta{
-        padding:60px 20px;
     }
 }
 </style>
@@ -297,32 +197,70 @@ footer{
         <li><a href="#">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <section class="hero">
-    <h1>Professional Websites Built for Growth and Credibility</h1>
-    <p>Helping students and small businesses create modern, clean, and responsive websites.</p>
-    <a href="#contact" class="btn">Start Your Website</a>
+    <h1>Professional Digital Services for Modern Brands</h1>
+    <p>Helping students, creators and businesses build strong online presence.</p>
+    <a href="#contact" class="btn">Start Your Project</a>
 </section>
 
 <section id="services">
     <h2>Services</h2>
     <div class="cards">
+
         <div class="card">
-            <h3>Portfolio Websites</h3>
-            <p>Professional personal websites to showcase achievements.</p>
+            <h3>Portfolio & Business Websites</h3>
+            <p>Clean, responsive websites built for credibility and growth.</p>
         </div>
+
         <div class="card">
-            <h3>Business Websites</h3>
-            <p>Modern websites that build trust and increase credibility.</p>
+            <h3>Resume & LinkedIn Optimization</h3>
+            <p>Professional resume writing and LinkedIn profile improvement.</p>
         </div>
+
         <div class="card">
-            <h3>Landing Pages</h3>
-            <p>Conversion-focused pages designed to generate leads.</p>
+            <h3>Canva Poster Design</h3>
+            <p>Modern social media posters and marketing creatives.</p>
         </div>
+
+        <div class="card">
+            <h3>YouTube Thumbnail Design</h3>
+            <p>High-converting thumbnails designed for clicks.</p>
+        </div>
+
+        <div class="card">
+            <h3>Instagram Reel Scripting</h3>
+            <p>Engaging content scripts that boost reach and retention.</p>
+        </div>
+
+        <div class="card">
+            <h3>AI Prompt Writing</h3>
+            <p>Optimized AI prompts for content, design and productivity.</p>
+        </div>
+
+        <div class="card">
+            <h3>Podcast Editing</h3>
+            <p>Clean audio editing and structuring for professional podcasts.</p>
+        </div>
+
+        <div class="card">
+            <h3>Custom PowerPoint Presentations</h3>
+            <p>Visually strong presentations for academic or business use.</p>
+        </div>
+
+        <div class="card">
+            <h3>Website Maintenance</h3>
+            <p>Ongoing updates, fixes and performance optimization.</p>
+        </div>
+
+        <div class="card">
+            <h3>Design Freelancing Services</h3>
+            <p>Digital design and web-related freelance solutions.</p>
+        </div>
+
     </div>
 </section>
 
@@ -333,59 +271,21 @@ footer{
             <h3>Joseph Ronald Kavala</h3>
             <p><strong>Founder, JR Web Studio</strong></p>
             <p>
-                I build clean, professional websites that help individuals and businesses 
-                establish a strong online presence.
+                I build clean, professional digital solutions that help individuals and businesses
+                establish authority and credibility online.
             </p>
         </div>
-        <div class="why-box">
-            <div class="why-item">
-                <h4>Fast Communication</h4>
-                <p>Quick replies and clear updates during your project.</p>
-            </div>
-            <div class="why-item">
-                <h4>Modern Design</h4>
-                <p>Clean layouts that build trust instantly.</p>
-            </div>
-            <div class="why-item">
-                <h4>Mobile Optimized</h4>
-                <p>Works perfectly on phones and desktops.</p>
-            </div>
-            <div class="why-item">
-                <h4>Attention to Detail</h4>
-                <p>Every section structured for clarity and impact.</p>
-            </div>
-        </div>
     </div>
-</section>
-
-<section id="faq">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-        <div class="faq-question">How long does a website take?</div>
-        <div class="faq-answer">Most projects take 1–5 days depending on complexity.</div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question">Will my website work on mobile?</div>
-        <div class="faq-answer">Yes. Every website is fully responsive and optimized for mobile devices.</div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question">Do you offer revisions?</div>
-        <div class="faq-answer">Yes. Revision rounds are included to ensure satisfaction.</div>
-    </div>
-
 </section>
 
 <section id="contact" class="cta">
-    <h2>Let’s Build Your Website</h2>
+    <h2>Let’s Work Together</h2>
     <a href="https://wa.me/919652152707" target="_blank" class="btn">Text on WhatsApp</a>
     <p style="margin-top:20px;">josephronaldk0509@gmail.com</p>
 </section>
 
 <footer>
-    © <span id="year"></span> JR Web Studio • Founded by Joseph Ronald Kavala
+    © <span id="year"></span> JR Web Studio
 </footer>
 
 <script>
@@ -395,24 +295,6 @@ window.onscroll = function(){
     let scrolled = (winScroll / height) * 100;
     document.getElementById("progressBar").style.width = scrolled + "%";
 };
-
-document.querySelectorAll(".faq-question").forEach(item=>{
-    item.addEventListener("click",()=>{
-        const answer=item.nextElementSibling;
-        answer.style.display=answer.style.display==="block"?"none":"block";
-    });
-});
-
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll",()=>{
-    sections.forEach(section=>{
-        const sectionTop = section.getBoundingClientRect().top;
-        if(sectionTop < window.innerHeight - 100){
-            section.classList.add("show");
-        }
-    });
-});
 
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
