@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JR Web Studios</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -18,139 +19,146 @@
 body{
     font-family:'Inter',sans-serif;
     background:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.03), transparent 40%),
-        linear-gradient(to bottom, #0d0d0d, #000000);
+        radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent 35%),
+        #000;
     color:#fff;
+    overflow-x:hidden;
 }
 
 /* NAVBAR */
 
 nav{
     position:fixed;
+    top:0;
     width:100%;
-    padding:22px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:22px 8%;
+    background:rgba(0,0,0,0.55);
     backdrop-filter:blur(20px);
-    background:rgba(0,0,0,0.6);
-    border-bottom:1px solid rgba(255,255,255,0.06);
+    border-bottom:1px solid rgba(255,255,255,0.05);
     z-index:1000;
 }
 
-nav .logo{
-    font-weight:800;
+.logo{
     font-size:18px;
+    font-weight:800;
+    letter-spacing:0.5px;
 }
 
 nav ul{
-    list-style:none;
     display:flex;
-    gap:35px;
+    list-style:none;
+    gap:34px;
 }
 
 nav ul li a{
     text-decoration:none;
-    color:#bbb;
-    font-weight:500;
+    color:#bfbfbf;
     font-size:14px;
     transition:0.3s;
+    font-weight:500;
 }
 
 nav ul li a:hover{
     color:#fff;
 }
 
-/* SECTIONS */
-
-section{
-    padding:140px 10%;
-}
-
-.section-box{
-    background:rgba(255,255,255,0.03);
-    border:1px solid rgba(255,255,255,0.06);
-    backdrop-filter:blur(20px);
-    border-radius:28px;
-    padding:70px;
-}
-
-h2{
-    font-size:32px;
-    font-weight:700;
-    margin-bottom:40px;
-}
-
 /* HERO */
 
 .hero{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:0 10%;
+    padding:140px 10% 100px;
 }
 
 .hero h1{
-    font-size:52px;
+    font-size:64px;
+    line-height:1.1;
+    max-width:900px;
     font-weight:800;
-    line-height:1.2;
-    background:linear-gradient(to right,#ffffff,#bfbfbf);
+    background:linear-gradient(to right,#fff,#9f9f9f);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-    margin-top:25px;
+    margin-top:28px;
+    color:#a1a1a1;
     font-size:18px;
-    color:#aaa;
     max-width:650px;
+    line-height:1.7;
 }
 
 .btn{
-    margin-top:35px;
-    padding:15px 36px;
-    background:#fff;
-    color:#000;
-    border-radius:40px;
+    display:inline-block;
+    margin-top:38px;
+    padding:16px 36px;
+    border-radius:50px;
     text-decoration:none;
     font-weight:600;
     transition:0.3s;
-    display:inline-block;
 }
 
-.btn:hover{
+.primary-btn{
+    background:#fff;
+    color:#000;
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px);
     background:#dcdcdc;
-    transform:translateY(-3px);
 }
 
-.btn-secondary{
-    background:transparent;
+.secondary-btn{
+    border:1px solid rgba(255,255,255,0.18);
     color:#fff;
-    border:1px solid rgba(255,255,255,0.4);
-    margin-left:15px;
+    margin-left:16px;
 }
 
-.btn-secondary:hover{
-    background:rgba(255,255,255,0.1);
+.secondary-btn:hover{
+    background:rgba(255,255,255,0.08);
 }
 
-/* SERVICES */
+/* SECTION */
 
-.services{
+section{
+    padding:110px 8%;
+}
+
+.section-box{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:30px;
+    backdrop-filter:blur(20px);
+    padding:70px;
+}
+
+.section-title{
+    font-size:38px;
+    margin-bottom:45px;
+    font-weight:800;
+}
+
+/* GRID */
+
+.grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
+    gap:28px;
 }
 
 .card{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:24px;
     padding:30px;
-    border-radius:22px;
-    background:rgba(255,255,255,0.02);
-    border:1px solid rgba(255,255,255,0.05);
     transition:0.3s;
 }
 
@@ -159,106 +167,125 @@ h2{
     background:rgba(255,255,255,0.05);
 }
 
+.card h3{
+    margin-bottom:15px;
+    font-size:20px;
+}
+
+.card p{
+    color:#a8a8a8;
+    line-height:1.7;
+}
+
+/* ABOUT */
+
+.about-text{
+    max-width:850px;
+    color:#b5b5b5;
+    line-height:1.9;
+    font-size:17px;
+}
+
 /* TESTIMONIAL */
 
 .testimonial{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:24px;
     padding:40px;
-    border-radius:22px;
-    background:rgba(255,255,255,0.02);
-    border:1px solid rgba(255,255,255,0.05);
+}
+
+.testimonial p{
+    line-height:1.8;
+    color:#d0d0d0;
 }
 
 /* FAQ */
 
 .faq-item{
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .faq-question{
-    cursor:pointer;
-    padding:18px 22px;
-    border-radius:16px;
     background:rgba(255,255,255,0.03);
+    padding:20px 24px;
+    border-radius:18px;
+    cursor:pointer;
     font-weight:600;
 }
 
 .faq-answer{
     display:none;
-    padding:12px 22px;
-    color:#aaa;
-    line-height:1.6;
+    padding:16px 24px;
+    color:#a8a8a8;
+    line-height:1.7;
 }
 
 /* CONTACT */
 
-.contact-box{
-    text-align:center;
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
 }
 
-.contact-box p{
-    color:#aaa;
-    margin-bottom:25px;
+.contact-text{
+    text-align:center;
+    color:#a5a5a5;
+    margin-bottom:30px;
+    font-size:17px;
 }
 
 /* FOOTER */
 
 footer{
     text-align:center;
-    padding:50px;
-    color:#777;
+    padding:45px 20px;
+    color:#7d7d7d;
     font-size:14px;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 
 @media (max-width:768px){
 
     nav{
         flex-direction:column;
+        gap:16px;
         padding:18px 5%;
-        gap:12px;
     }
 
     nav ul{
-        gap:18px;
         flex-wrap:wrap;
         justify-content:center;
-    }
-
-    section{
-        padding:90px 5%;
-    }
-
-    .section-box{
-        padding:35px;
-        border-radius:22px;
+        gap:18px;
     }
 
     .hero{
-        height:auto;
-        padding-top:140px;
-        padding-bottom:80px;
+        padding:170px 6% 90px;
     }
 
     .hero h1{
-        font-size:30px;
+        font-size:36px;
     }
 
     .hero p{
         font-size:15px;
     }
 
-    h2{
-        font-size:24px;
-        margin-bottom:25px;
+    section{
+        padding:80px 5%;
     }
 
-    .card{
-        padding:22px;
+    .section-box{
+        padding:35px 24px;
+        border-radius:24px;
     }
 
-    .testimonial{
-        padding:25px;
+    .section-title{
+        font-size:28px;
+        margin-bottom:32px;
     }
 
     .btn{
@@ -266,22 +293,38 @@ footer{
         text-align:center;
     }
 
-    .btn-secondary{
+    .secondary-btn{
         margin-left:0;
         margin-top:15px;
-        width:100%;
+    }
+
+    .contact-buttons{
+        flex-direction:column;
+    }
+
+    .card{
+        padding:24px;
+    }
+
+    .testimonial{
+        padding:28px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
     <div class="logo">JR Web Studios</div>
+
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#testimonial">Testimonial</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -289,78 +332,224 @@ footer{
     </ul>
 </nav>
 
-<div class="hero" id="home">
-    <h1>Premium Digital Services for Modern Brands</h1>
-    <p>Web. Design. Optimization. Built with clarity and precision.</p>
-    <a href="#services" class="btn">Explore Services</a>
-</div>
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <h1>Premium Digital Services For Modern Brands</h1>
+
+    <p>
+        Clean websites, modern visuals, and professional digital experiences
+        built with clarity, performance, and premium design.
+    </p>
+
+    <div>
+        <a href="#services" class="btn primary-btn">Explore Services</a>
+        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+    </div>
+
+</section>
+
+<!-- SERVICES -->
 
 <section id="services">
+
 <div class="section-box">
-<h2>Services</h2>
-<div class="services">
-<div class="card">Resume & LinkedIn Profile Optimization</div>
-<div class="card">Canva Poster Design</div>
-<div class="card">YouTube Thumbnail Design</div>
-<div class="card">Instagram Reel Scripting</div>
-<div class="card">AI Prompt Writing Service</div>
-<div class="card">Podcast Editing Service</div>
-<div class="card">Custom PowerPoint Presentation Service</div>
-<div class="card">Website Maintenance Service</div>
-<div class="card">Fiverr Freelancing (Design/Web)</div>
+
+<h2 class="section-title">Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Resume & LinkedIn Optimization</h3>
+<p>Professional resume refinement and LinkedIn profile optimization.</p>
 </div>
+
+<div class="card">
+<h3>Canva Poster Design</h3>
+<p>Modern promotional posters and clean social media creatives.</p>
 </div>
+
+<div class="card">
+<h3>YouTube Thumbnail Design</h3>
+<p>High-converting thumbnails designed to improve click-through rate.</p>
+</div>
+
+<div class="card">
+<h3>Instagram Reel Scripting</h3>
+<p>Short-form content scripting optimized for engagement and retention.</p>
+</div>
+
+<div class="card">
+<h3>AI Prompt Writing</h3>
+<p>Custom AI prompts designed for productivity and creative workflows.</p>
+</div>
+
+<div class="card">
+<h3>Podcast Editing</h3>
+<p>Clean audio refinement and professional podcast polishing.</p>
+</div>
+
+<div class="card">
+<h3>Custom Presentations</h3>
+<p>Premium PowerPoint presentations with modern visual storytelling.</p>
+</div>
+
+<div class="card">
+<h3>Website Maintenance</h3>
+<p>Performance updates, fixes, optimization, and ongoing support.</p>
+</div>
+
+<div class="card">
+<h3>Fiverr Freelancing</h3>
+<p>Web and design freelance services delivered professionally.</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-box">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="grid">
+
+<a href="https://artgpt02.github.io/ArtGPT/" target="_blank" style="text-decoration:none;color:white;">
+
+<div class="card">
+
+<h3>ArtGPT</h3>
+
+<p>
+AI-powered creative platform focused on clean UI, modern visuals,
+and engaging user experience.
+</p>
+
+<p style="margin-top:20px;font-weight:600;color:#fff;">
+View Live Project →
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
 
 <section id="about">
+
 <div class="section-box">
-<h2>About the Founder</h2>
-<p style="color:#aaa; line-height:1.8; max-width:800px;">
-JR Web Studios was founded by Joseph Ronald, focused on building clean and professional digital experiences that establish credibility and trust.
+
+<h2 class="section-title">About the Founder</h2>
+
+<p class="about-text">
+JR Web Studios was founded by Joseph Ronald with the goal of building
+clean, premium digital experiences that help creators, students, and
+businesses establish a strong online presence. The focus is on clarity,
+professionalism, and modern design aesthetics inspired by premium brands.
 </p>
+
 </div>
+
 </section>
+
+<!-- TESTIMONIAL -->
 
 <section id="testimonial">
+
 <div class="section-box">
-<h2>Client Testimonial</h2>
+
+<h2 class="section-title">Client Testimonial</h2>
+
 <div class="testimonial">
+
 <p>
-"JR Web Studios delivered a clean and modern website that elevated our brand presence. The design quality and clarity exceeded expectations."
+“JR Web Studios delivered a clean and modern website that elevated our
+brand presence. The overall quality and attention to detail exceeded expectations.”
 </p>
+
 <br>
-<strong>Daniel – Owner of ArtGPT</strong><br>
+
+<strong>Daniel — Owner of ArtGPT</strong><br>
 ⭐ 4.7 / 5 Rating
+
 </div>
+
 </div>
+
 </section>
 
+<!-- FAQ -->
+
 <section id="faq">
+
 <div class="section-box">
-<h2>Frequently Asked Questions</h2>
+
+<h2 class="section-title">Frequently Asked Questions</h2>
 
 <div class="faq-item">
 <div class="faq-question">How long does a project take?</div>
-<div class="faq-answer">Most projects are completed within 3–7 days depending on scope.</div>
+<div class="faq-answer">
+Most projects are completed within 3–7 days depending on scope and complexity.
+</div>
 </div>
 
 <div class="faq-item">
 <div class="faq-question">Do you offer revisions?</div>
-<div class="faq-answer">Yes, revisions are included to ensure satisfaction.</div>
+<div class="faq-answer">
+Yes. Revisions are included to ensure quality and satisfaction.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Will the website work on mobile devices?</div>
+<div class="faq-answer">
+Yes. Every project is optimized for phones, tablets, and desktops.
+</div>
 </div>
 
 </div>
+
 </section>
 
-<section id="contact">
-<div class="section-box contact-box">
-<h2>Contact</h2>
-<p>Interested in working together? Let’s build something professional.</p>
+<!-- CONTACT -->
 
-<a href="mailto:josephronaldk0509@gmail.com" class="btn">Send Email</a>
-<a href="https://wa.me/919652152707" target="_blank" class="btn btn-secondary">Chat on WhatsApp</a>
+<section id="contact">
+
+<div class="section-box">
+
+<h2 class="section-title" style="text-align:center;">Contact</h2>
+
+<p class="contact-text">
+Interested in working together? Let’s build something professional.
+</p>
+
+<div class="contact-buttons">
+
+<a href="mailto:josephronaldk0509@gmail.com" class="btn primary-btn">
+Send Email
+</a>
+
+<a href="https://wa.me/919652152707" target="_blank" class="btn secondary-btn">
+Chat on WhatsApp
+</a>
 
 </div>
+
+</div>
+
 </section>
 
 <footer>
@@ -368,14 +557,22 @@ JR Web Studios was founded by Joseph Ronald, focused on building clean and profe
 </footer>
 
 <script>
+
 document.getElementById("year").textContent = new Date().getFullYear();
 
-document.querySelectorAll(".faq-question").forEach(q=>{
-    q.addEventListener("click",()=>{
-        const answer = q.nextElementSibling;
-        answer.style.display = answer.style.display === "block" ? "none" : "block";
+document.querySelectorAll(".faq-question").forEach(question => {
+
+    question.addEventListener("click", () => {
+
+        const answer = question.nextElementSibling;
+
+        answer.style.display =
+        answer.style.display === "block" ? "none" : "block";
+
     });
+
 });
+
 </script>
 
 </body>
